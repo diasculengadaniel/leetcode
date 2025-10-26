@@ -25,5 +25,8 @@ printf("%d %d %d\n",init_i,j,max);
 }
 
 void main(void){
- max_cycle(1,10);
+ int n1,n2;
+ printf("Introduza dois Números: ");
+ scanf("%d%d",&n1,&n2);
+ max_cycle(n1,n2);
 }
