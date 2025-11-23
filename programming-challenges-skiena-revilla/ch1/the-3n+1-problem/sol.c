@@ -12,7 +12,7 @@ int conjecture(int n){
  return count;
 }
 
-void  max_cycle(int i, int j){
+int max_cycle(int i, int j){
  int cycle = 0;
  int max = 0;
  int init_i = i;
@@ -21,12 +21,12 @@ void  max_cycle(int i, int j){
   if(cycle>max)
    max = cycle;
  }
-printf("%d %d %d\n",init_i,j,max); 
+return max;
 }
 
 void main(void){
- int n1,n2;
- printf("Introduza dois Números: ");
- scanf("%d%d",&n1,&n2);
- max_cycle(n1,n2);
+ int a,b;
+ while(scanf("%d %d,&a,&b")!= EOF){
+  printf("%d %d %d\n",a,b,max_cycle(a,b));
+ }
 }
