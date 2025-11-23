@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int conjecture(int n){
- int count = 1;//Because the edges counts too.
+ int count = 1;
  while(n>1){
   if(n%2==0)
    n= n/2;
@@ -21,12 +21,13 @@ int max_cycle(int i, int j){
   if(cycle>max)
    max = cycle;
  }
-return max;
+ return max;
 }
 
-void main(void){
+int main(void){
  int a,b;
- while(scanf("%d %d,&a,&b")!= EOF){
+ while(scanf("%d %d",&a,&b) == 2){
   printf("%d %d %d\n",a,b,max_cycle(a,b));
  }
+ return 0;
 }
