@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int conjecture(int n){
+int conjecture(unsigned long int n){
  int count = 1;
  while(n>1){
   if(n%2==0)
@@ -12,10 +12,16 @@ int conjecture(int n){
  return count;
 }
 
-int max_cycle(int i, int j){
+int max_cycle(unsigned long int i, unsigned long int j){
  int cycle = 0;
  int max = 0;
- int init_i = i;
+
+ if(i>j){
+  unsigned long int tmp = i;
+  i=j;
+  j=tmp;
+ }
+
  while(i<=j){
   cycle = conjecture(i++); 
   if(cycle>max)
@@ -25,8 +31,8 @@ int max_cycle(int i, int j){
 }
 
 int main(void){
- int a,b;
- while(scanf("%d %d",&a,&b) == 2){
+ unsigned long int a,b;
+ while(scanf("%ld %ld",&a,&b) == 2){
   printf("%d %d %d\n",a,b,max_cycle(a,b));
  }
  return 0;
